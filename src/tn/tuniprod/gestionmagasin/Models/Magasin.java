@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Magasin {
     private int id;
     private String addresse;
-    private int CAPACITE = 50;
+    private final int CAPACITE = 50;
     private Produit[] produits = new Produit[CAPACITE];
 
     public Magasin(int id, String addresse) {
@@ -14,25 +14,23 @@ public class Magasin {
     }
 
     public void ajoutProduit(Produit produit) {
-        if (produits.length < CAPACITE) {
-            for (int i = 0; i < produits.length; i++) {
-                if (produits[i] == null) {
-                    produits[i] = produit;
-                    break;
-                }
+        for (int i = 0; i < produits.length; i++) {
+            if (produits[i] == null) {
+                produits[i] = produit;
+                break;
             }
-        } else {
-            System.out.println("Le magasin est plein");
         }
     }
 
     public void afficher() {
-        System.out.println("Magasin: " + this.id + " à " + this.addresse);
-        for (Produit produit : produits) {
+    System.out.println("Magasin: " + this.id + " à " + this.addresse);
+    for (Produit produit : produits) {
+        if (produit != null) {
             System.out.println("Produit: \n" + "\t- Nom: " + produit.getLibelle() + "\n\t- Prix: " + produit.getPrix() + " TND");
         }
-        System.out.println("\n");
     }
+    System.out.println("\n");
+}
 
     public int getNombreProduits() {
         return produits.length;
