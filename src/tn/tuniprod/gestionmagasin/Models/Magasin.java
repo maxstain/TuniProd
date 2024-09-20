@@ -6,7 +6,7 @@ public class Magasin {
     private int id;
     private String addresse;
     private final int CAPACITE = 50;
-    private Produit[] produits = new Produit[CAPACITE];
+    private final Produit[] produits = new Produit[CAPACITE];
 
     public Magasin(int id, String addresse) {
         this.id = id;
