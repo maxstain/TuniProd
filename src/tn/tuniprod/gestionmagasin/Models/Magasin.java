@@ -1,7 +1,5 @@
 package tn.tuniprod.gestionmagasin.Models;
 
-import java.util.ArrayList;
-
 public class Magasin {
     private int id;
     private String addresse;
