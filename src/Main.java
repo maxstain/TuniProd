@@ -31,6 +31,6 @@ public class Main {
         m2.afficher();
 
         System.out.println("Nombre totale des produits dans tout les magasins: "
-                + (m1.getProduits().size() + m2.getProduits().size()));
+                + (m1.getProduits().length + m2.getProduits().length));
     }
 }

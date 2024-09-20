@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Magasin {
     private int id;
     private String addresse;
-    private int capacite = 50;
-    private ArrayList<Produit> produits = new ArrayList<>();
+    private int CAPACITE = 50;
+    private Produit[] produits = new Produit[CAPACITE];
 
     public Magasin(int id, String addresse) {
         this.id = id;
@@ -14,8 +14,13 @@ public class Magasin {
     }
 
     public void ajoutProduit(Produit produit) {
-        if (produits.size() < capacite) {
-            produits.add(produit);
+        if (produits.length < CAPACITE) {
+            for (int i = 0; i < produits.length; i++) {
+                if (produits[i] == null) {
+                    produits[i] = produit;
+                    break;
+                }
+            }
         } else {
             System.out.println("Le magasin est plein");
         }
@@ -30,7 +35,7 @@ public class Magasin {
     }
 
     public int getNombreProduits() {
-        return produits.size();
+        return produits.length;
     }
 
     public int getId() {
@@ -49,15 +54,11 @@ public class Magasin {
         this.addresse = addresse;
     }
 
-    public void setCapacite(int capacite) {
-        this.capacite = capacite;
-    }
-
     public int getCapacite() {
-        return capacite;
+        return CAPACITE;
     }
 
-    public ArrayList<Produit> getProduits() {
+    public Produit[] getProduits() {
         return produits;
     }
 }
