@@ -6,6 +6,9 @@ public class Magasin {
     private final int CAPACITE = 50;
     private final Produit[] produits = new Produit[CAPACITE];
 
+    public Magasin() {
+    }
+
     public Magasin(int id, String addresse) {
         this.id = id;
         this.addresse = addresse;
@@ -21,14 +24,14 @@ public class Magasin {
     }
 
     public void afficher() {
-    System.out.println("Magasin: " + this.id + " à " + this.addresse);
-    for (Produit produit : produits) {
-        if (produit != null) {
-            System.out.println("Produit: \n" + "\t- Nom: " + produit.getLibelle() + "\n\t- Prix: " + produit.getPrix() + " TND");
+        System.out.println("Magasin: " + this.id + " à " + this.addresse);
+        for (Produit produit : produits) {
+            if (produit != null) {
+                System.out.println("Produit: \n" + "\t- Nom: " + produit.getLibelle() + "\n\t- Prix: " + produit.getPrix() + " TND");
+            }
         }
+        System.out.println("\n");
     }
-    System.out.println("\n");
-}
 
     public int getNombreProduits() {
         return produits.length;
