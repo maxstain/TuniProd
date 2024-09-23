@@ -60,4 +60,12 @@ public class Magasin {
     public Produit[] getProduits() {
         return produits;
     }
+
+    public static boolean comparer(Magasin m1, Magasin m2) {
+        return m1 == m2;
+    }
+
+    public boolean comaprer(Magasin m) {
+        return this == m;
+    }
 }

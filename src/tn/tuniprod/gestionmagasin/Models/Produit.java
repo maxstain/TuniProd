@@ -80,4 +80,12 @@ public class Produit {
         return this.dateExpiration;
     }
 
+    public boolean comparer(Produit p1) {
+        return p1.marque.equals(this.marque) && p1.libelle.equals(this.libelle) && p1.prix == this.prix;
+    }
+
+    public static boolean comparer(Produit p1, Produit p2) {
+        return p1.marque.equals(p2.marque) && p1.libelle.equals(p2.libelle) && p1.prix == p2.prix;
+    }
+
 }
