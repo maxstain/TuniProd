@@ -68,4 +68,17 @@ public class Magasin {
     public boolean comaprer(Magasin m) {
         return this == m;
     }
+
+    public boolean chercherProduit(Produit produit) {
+        for (Produit p : produits) {
+            if (p != null && p.comparer(produit)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static Magasin magasinAvecPlusDeProduits(Magasin m1, Magasin m2) {
+        return m1.getNombreProduits() > m2.getNombreProduits() ? m1 : m2;
+    }
 }
