@@ -2,15 +2,18 @@ package tn.tuniprod.gestionmagasin.Models;
 
 public class Magasin {
     private int id;
+    private String Nom;
     private String addresse;
     private final int CAPACITE = 50;
     private final Produit[] produits = new Produit[CAPACITE];
+    private final Employe[] employes = new Employe[20];
 
     public Magasin() {
     }
 
-    public Magasin(int id, String addresse) {
+    public Magasin(int id, String Nom, String addresse) {
         this.id = id;
+        this.Nom = Nom;
         this.addresse = addresse;
     }
 
@@ -27,7 +30,12 @@ public class Magasin {
         System.out.println("Magasin: " + this.id + " à " + this.addresse);
         for (Produit produit : produits) {
             if (produit != null) {
-                System.out.println("Produit: \n" + "\t- Nom: " + produit.getLibelle() + "\n\t- Prix: " + produit.getPrix() + " TND");
+                System.out.println("Produit: \n" + "\t- Nom: " + produit.getLibelle() + "\n\t- Prix: " + produit.getPrix() + " TND\n");
+                for (Employe employe : employes) {
+                    if (employe != null) {
+                        System.out.println("Employe: \n" + "\t- Nom: " + employe.getNom() + "\n\t- Adresse: " + employe.getAddresse() + "\n\t- Nombre d'heures: " + employe.getNbr_heures() + "\n");
+                    }
+                }
             }
         }
         System.out.println("\n");
@@ -80,5 +88,18 @@ public class Magasin {
 
     public static Magasin magasinAvecPlusDeProduits(Magasin m1, Magasin m2) {
         return m1.getNombreProduits() > m2.getNombreProduits() ? m1 : m2;
+    }
+
+    public void ajoutEmploye(Employe employe) {
+        for (int i = 0; i < employes.length; i++) {
+            if (employes[i] == null) {
+                employes[i] = employe;
+                break;
+            }
+        }
+    }
+
+    public Employe[] getEmployes() {
+        return employes;
     }
 }
