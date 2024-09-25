@@ -115,4 +115,31 @@ public class Magasin {
     public Employe[] getEmployes() {
         return employes;
     }
+
+    public void setEmployes(Employe[] employes) {
+        for (int i = 0; i < employes.length; i++) {
+            this.employes[i] = employes[i];
+        }
+    }
+
+    public void afficheSalaires() {
+        for (Employe employe : employes) {
+            if (employe != null) {
+                System.out.println("Salaire de " + employe.getNom() + " est " + employe.calculeSalaire());
+            }
+        }
+    }
+
+    public void affichePrimeEmployes() {
+        double prime = 0;
+        for (Employe employe : employes) {
+            if (employe.getClass() == Responsable.class) {
+                prime += ((Responsable) employe).getPrime();
+            }
+        }
+
+        System.out.println("La prime des responsables est " + prime);
+    }
+
+
 }

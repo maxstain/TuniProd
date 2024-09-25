@@ -88,4 +88,8 @@ public class Produit {
         return p1.marque.equals(p2.marque) && p1.libelle.equals(p2.libelle) && p1.prix == p2.prix;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
 }
