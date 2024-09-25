@@ -1,28 +1,21 @@
 package tn.tuniprod.gestionmagasin.Models;
 
 public class Responsable extends Employe {
-    private int id;
-    private String nom;
-    private String addresse;
-    private int nbr_heures;
-    private double salaire;
+    private double prime;
 
     public Responsable() {
     }
 
-    public Responsable(int id, String nom, String addresse, int nbr_heures, double salaire) {
-        this.id = id;
-        this.nom = nom;
-        this.addresse = addresse;
-        this.nbr_heures = nbr_heures;
-        this.salaire = salaire;
+    public Responsable(int id, String nom, String addresse, int nbr_heures, double prime) {
+        super(id, nom, addresse, nbr_heures);
+        this.prime = prime;
     }
 
-    public double getSalaire() {
-        return salaire;
+    public double getPrime() {
+        return prime;
     }
 
-    public void setSalaire(double salaire) {
-        this.salaire = salaire;
+    public void setPrime(double prime) {
+        this.prime = prime;
     }
 }

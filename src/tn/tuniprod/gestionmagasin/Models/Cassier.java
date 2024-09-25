@@ -1,28 +1,21 @@
 package tn.tuniprod.gestionmagasin.Models;
 
 public class Cassier extends Employe {
-    private int id;
-    private String nom;
-    private String addresse;
-    private int nbr_heures;
-    private double salaire;
+    private int numeroDeCaisse;
 
     public Cassier() {
     }
 
-    public Cassier(int id, String nom, String addresse, int nbr_heures, double salaire) {
-        this.id = id;
-        this.nom = nom;
-        this.addresse = addresse;
-        this.nbr_heures = nbr_heures;
-        this.salaire = salaire;
+    public Cassier(int id, String nom, String addresse, int nbr_heures, int numeroDeCaisse) {
+        super(id, nom, addresse, nbr_heures);
+        this.numeroDeCaisse = numeroDeCaisse;
     }
 
-    public double getSalaire() {
-        return salaire;
+    public int getNumeroDeCaisse() {
+        return numeroDeCaisse;
     }
 
-    public void setSalaire(double salaire) {
-        this.salaire = salaire;
+    public void setNumeroDeCaisse(int numeroDeCaisse) {
+        this.numeroDeCaisse = numeroDeCaisse;
     }
 }

@@ -1,28 +1,21 @@
 package tn.tuniprod.gestionmagasin.Models;
 
 public class Vendeur extends Employe {
-    private int id;
-    private String nom;
-    private String addresse;
-    private int nbr_heures;
-    private double salaire;
+    private double tauxDeVente;
 
     public Vendeur() {
     }
 
-    public Vendeur(int id, String nom, String addresse, int nbr_heures, double salaire) {
-        this.id = id;
-        this.nom = nom;
-        this.addresse = addresse;
-        this.nbr_heures = nbr_heures;
-        this.salaire = salaire;
+    public Vendeur(int id, String nom, String addresse, int nbr_heures, double tauxDeVente) {
+        super(id, nom, addresse, nbr_heures);
+        this.tauxDeVente = tauxDeVente;
     }
 
-    public double getSalaire() {
-        return salaire;
+    public double getTauxDeVente() {
+        return tauxDeVente;
     }
 
-    public void setSalaire(double salaire) {
-        this.salaire = salaire;
+    public void setTauxDeVente(double tauxDeVente) {
+        this.tauxDeVente = tauxDeVente;
     }
 }
