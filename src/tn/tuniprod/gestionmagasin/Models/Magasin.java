@@ -27,15 +27,20 @@ public class Magasin {
     }
 
     public void afficher() {
-        System.out.println("Magasin: " + this.id + " à " + this.addresse);
+        System.out.println("Magasin: " + this.id + " à " + this.addresse + " de capactié: " + this.CAPACITE);
+        System.out.println("Produits:");
         for (Produit produit : produits) {
             if (produit != null) {
-                System.out.println("Produit: \n" + "\t- Nom: " + produit.getLibelle() + "\n\t- Prix: " + produit.getPrix() + " TND\n");
-                for (Employe employe : employes) {
-                    if (employe != null) {
-                        System.out.println("Employe: \n" + "\t- Nom: " + employe.getNom() + "\n\t- Adresse: " + employe.getAddresse() + "\n\t- Nombre d'heures: " + employe.getNbr_heures() + "\n");
-                    }
-                }
+                System.out.println("* Produit: \n" + "\t- Nom: " + produit.getLibelle() + "\n\t- Prix: " + produit.getPrix() + " TND\n");
+            }
+        }
+        System.out.println("Employes:");
+        for (Employe employe : employes) {
+            if (employe != null) {
+                System.out.println("* Employe: \n" + "\t- Nom: " + employe.getNom() + "\n\t- Adresse: " + employe.getAddresse()
+                        + "\n\t- Nombre d'heures: " + employe.getNbr_heures()
+                        + "\n\t- Salaire: " + employe.calculeSalaire() + "\n"
+                );
             }
         }
         System.out.println("\n");
@@ -49,12 +54,20 @@ public class Magasin {
         return id;
     }
 
+    public String getNom() {
+        return Nom;
+    }
+
     public String getAddresse() {
         return addresse;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setNom(String Nom) {
+        this.Nom = Nom;
     }
 
     public void setAddresse(String addresse) {

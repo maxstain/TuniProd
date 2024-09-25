@@ -18,4 +18,13 @@ public class Responsable extends Employe {
     public void setPrime(double prime) {
         this.prime = prime;
     }
+
+    @Override
+    public double calculeSalaire() {
+        if (this.getNbr_heures() < 160) {
+            return (this.getNbr_heures() * 10) + this.prime;
+        } else {
+            return ((160 * 10) + (this.getNbr_heures() - 160) * 1.20) + this.prime;
+        }
+    }
 }

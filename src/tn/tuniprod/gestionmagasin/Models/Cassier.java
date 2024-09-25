@@ -18,4 +18,13 @@ public class Cassier extends Employe {
     public void setNumeroDeCaisse(int numeroDeCaisse) {
         this.numeroDeCaisse = numeroDeCaisse;
     }
+
+    @Override
+    public double calculeSalaire() {
+        if (this.getNbr_heures() < 180) {
+            return this.getNbr_heures() * 5;
+        } else {
+            return (180 * 5) + (this.getNbr_heures() - 180) * 1.15;
+        }
+    }
 }

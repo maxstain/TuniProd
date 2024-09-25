@@ -18,4 +18,9 @@ public class Vendeur extends Employe {
     public void setTauxDeVente(double tauxDeVente) {
         this.tauxDeVente = tauxDeVente;
     }
+
+    @Override
+    public double calculeSalaire() {
+        return 450 * (this.tauxDeVente * 0.1);
+    }
 }

@@ -61,4 +61,8 @@ public class Employe {
     public void afficher() {
         System.out.println("Employe: \n" + "\t- Nom: " + this.nom + "\n\t- Adresse: " + this.addresse + "\n\t- Nombre d'heures: " + this.nbr_heures + "\n");
     }
+
+    public double calculeSalaire() {
+        return 0;
+    }
 }
