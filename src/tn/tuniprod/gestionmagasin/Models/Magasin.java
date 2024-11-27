@@ -28,7 +28,7 @@ public class Magasin {
 
     public void afficher() {
         System.out.println("Magasin: " + this.id + " à " + this.addresse + " de capactié: " + this.CAPACITE);
-        System.out.println("Produits:");
+        System.out.println("Produits:" + "Nombre de produits: " + this.getNombreProduits());
         for (Produit produit : produits) {
             if (produit != null) {
                 System.out.println("* Produit: \n" + "\t- Nom: " + produit.getLibelle() + "\n\t- Prix: " + produit.getPrix() + " TND\n");
@@ -43,6 +43,8 @@ public class Magasin {
                 );
             }
         }
+        affichePrimeEmployes();
+        System.out.println("--------------------------------------------------");
         System.out.println("\n");
     }
 
@@ -133,7 +135,7 @@ public class Magasin {
     public void affichePrimeEmployes() {
         double prime = 0;
         for (Employe employe : employes) {
-            if (employe.getClass() == Responsable.class) {
+            if (employe != null && employe.getClass() == Responsable.class) {
                 prime += ((Responsable) employe).getPrime();
             }
         }
