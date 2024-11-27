@@ -1,6 +1,7 @@
 package tn.tuniprod.gestionmagasin.Models;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Produit {
     private int id;
@@ -50,6 +51,11 @@ public class Produit {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, libelle, marque, prix, dateExpiration);
     }
 
     public int getId() {
